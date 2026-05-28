@@ -1,8 +1,9 @@
-/* Pastel Noir — dark, colorful, clean */
+/* Pastel Noir — colorful, clean (dark + light) */
 
-/* Dark mode overrides */
+/* ============================================================
+   Dark mode — backgrounds, text, palette
+   ============================================================ */
 .theme-dark {
-  /* Backgrounds — unified dark */
   --base-h: 240;
   --base-s: 4%;
   --base-d: 6%;
@@ -13,20 +14,11 @@
   --background-modifier-border: hsl(240, 4%, 22%);
   --background-modifier-form-field: hsl(240, 4%, 9%);
 
-  /* Text */
   --text-normal: #dcdcdf;
   --text-muted: #9e9eaa;
   --text-faint: #747484;
   --text-on-accent: #ffffff;
 
-  /* Accent — green */
-  --accent-h: 170;
-  --accent-s: 55%;
-  --accent-d: 55%;
-  --interactive-accent: #3eb4a0;
-  --interactive-accent-hover: #4cc9b4;
-
-  /* Color palette */
   --blue: #5a9bcf;
   --blue-light: #7db4e0;
   --pink: #d47daa;
@@ -39,217 +31,298 @@
   --gray-light: #c8c8cc;
   --gray-mid: #a4a4b0;
 
-  /* Heading colors */
-  --h1-color: var(--gray-light);
-  --h2-color: var(--green);
-  --h3-color: var(--blue);
-  --h4-color: var(--yellow);
-  --h5-color: var(--pink);
-  --h6-color: #6b6b76;
+  --pn-nav-hover-bg: hsl(240, 4%, 10%);
+  --pn-nav-active-bg: hsl(160, 20%, 12%);
+  --pn-heading-border: hsl(240, 4%, 22%);
+  --pn-code-bg: hsl(240, 4%, 10%);
+  --pn-blockquote-bg: hsl(160, 8%, 6%);
+  --pn-th-bg: hsl(240, 6%, 14%);
+  --pn-td-border: hsl(240, 5%, 22%);
+  --pn-selection-bg: hsla(170, 40%, 25%, 0.35);
+  --pn-tab-active-bg: hsl(240, 5%, 4%);
+  --pn-hr-color: hsl(240, 5%, 24%);
+  --pn-tag-bg: hsl(160, 30%, 18%);
 
-  /* Bold & italic */
-  --strong-color: var(--orange);
-  --em-color: var(--purple);
+  --accent-h: 170;
+  --accent-s: 55%;
+  --accent-d: 55%;
+  --interactive-accent: #3eb4a0;
+  --interactive-accent-hover: #4cc9b4;
 
-  /* Blockquotes */
-  --quote-color: var(--green);
-
-  /* Tags — subtle green */
-  --tag-background-color-d: hsl(160, 30%, 18%);
-  --tag-font-color-d: var(--green);
-
-  /* Links */
-  --link-color: var(--blue);
-  --link-color-hover: var(--blue-light);
-  --link-external-color: var(--blue);
-  --link-external-color-hover: var(--blue-light);
-
-  /* Code blocks */
-  --code-normal: var(--orange);
-  --code-background: hsl(240, 5%, 4%);
-
-  /* Highlight */
-  --highlight-background-color--normal: hsl(45, 80%, 50%, 0.12);
-  --highlight-background-color-underline: hsl(45, 80%, 50%, 0.9);
-
-  /* Icons */
   --icon-color: #9e9eaa;
   --icon-color-hover: var(--gray-light);
   --icon-color-active: var(--green);
   --icon-color-focused: var(--gray-light);
   --nav-item-color: var(--gray-mid);
 
-  /* Tabs — no rounding */
-  --tab-radius: 0;
-  --tab-radius-active: 0;
-  --corner-shape: 0;
+  --tag-background-color-d: var(--pn-tag-bg);
+  --tag-font-color-d: var(--green);
 
-  /* Scrollbar */
   --scrollbar-bg: transparent;
   --scrollbar-thumb-bg: hsl(240, 4%, 16%);
   --scrollbar-active-thumb-bg: hsl(240, 4%, 22%);
 }
 
+/* ============================================================
+   Light mode — backgrounds, text, palette
+   ============================================================ */
+.theme-light {
+  --base-h: 240;
+  --base-s: 6%;
+  --base-d: 98%;
+  --background-primary: hsl(240, 10%, 99%);
+  --background-primary-alt: hsl(240, 10%, 99%);
+  --background-secondary: hsl(240, 10%, 97%);
+  --background-secondary-alt: hsl(240, 10%, 95%);
+  --background-modifier-border: hsl(240, 6%, 86%);
+  --background-modifier-form-field: hsl(240, 10%, 96%);
+
+  --text-normal: #2a2a2f;
+  --text-muted: #6a6a76;
+  --text-faint: #9a9aa6;
+  --text-on-accent: #ffffff;
+
+  /* Saturated for stronger pop on light backgrounds, still pastel-noir */
+  --blue: #1a5fa3;
+  --blue-light: #2e7ec3;
+  --pink: #b8327a;
+  --green: #15843d;
+  --yellow: #a8700f;
+  --orange: #b25a14;
+  --red: #b8242c;
+  --purple: #7530b8;
+  --teal: #058578;
+  --gray-light: #36363e;
+  --gray-mid: #55555f;
+
+  --pn-nav-hover-bg: hsl(240, 10%, 93%);
+  --pn-nav-active-bg: hsl(160, 35%, 90%);
+  --pn-heading-border: hsl(240, 6%, 86%);
+  --pn-code-bg: hsl(240, 10%, 95%);
+  --pn-blockquote-bg: hsl(160, 25%, 95%);
+  --pn-th-bg: hsl(240, 10%, 94%);
+  --pn-td-border: hsl(240, 6%, 86%);
+  --pn-selection-bg: hsla(170, 50%, 65%, 0.4);
+  --pn-tab-active-bg: hsl(240, 10%, 99%);
+  --pn-hr-color: hsl(240, 6%, 86%);
+  --pn-tag-bg: hsl(160, 40%, 90%);
+
+  --accent-h: 170;
+  --accent-s: 55%;
+  --accent-d: 40%;
+  --interactive-accent: #2a9b88;
+  --interactive-accent-hover: #3aae9b;
+
+  --icon-color: #6a6a76;
+  --icon-color-hover: var(--gray-light);
+  --icon-color-active: var(--green);
+  --icon-color-focused: var(--gray-light);
+  --nav-item-color: var(--gray-mid);
+
+  --tag-background-color-l: var(--pn-tag-bg);
+  --tag-font-color-l: var(--green);
+
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: hsl(240, 6%, 80%);
+  --scrollbar-active-thumb-bg: hsl(240, 6%, 68%);
+}
+
+/* ============================================================
+   Shared — uses variables defined above, works in both themes
+   ============================================================ */
+
+/* Heading & inline text colors */
+.theme-dark,
+.theme-light {
+  --h1-color: var(--gray-light);
+  --h2-color: var(--green);
+  --h3-color: var(--blue);
+  --h4-color: var(--yellow);
+  --h5-color: var(--pink);
+  --h6-color: var(--gray-mid);
+
+  --strong-color: var(--orange);
+  --em-color: var(--purple);
+  --quote-color: var(--green);
+
+  --link-color: var(--blue);
+  --link-color-hover: var(--blue-light);
+  --link-external-color: var(--blue);
+  --link-external-color-hover: var(--blue-light);
+
+  --code-normal: var(--orange);
+  --code-background: var(--pn-code-bg);
+
+  --highlight-background-color--normal: hsla(45, 80%, 50%, 0.12);
+  --highlight-background-color-underline: hsla(45, 80%, 50%, 0.9);
+
+  --tab-radius: 0;
+  --tab-radius-active: 0;
+  --corner-shape: 0;
+}
+
+/* All rules below are scoped to :is(.theme-dark, .theme-light) — same
+   class-level specificity as the original .theme-dark prefix, so they
+   beat Obsidian's default rules in both modes. */
+
 /* Sidebar / navigation */
-.theme-dark .nav-file-title,
-.theme-dark .nav-folder-title {
+:is(.theme-dark, .theme-light) .nav-file-title,
+:is(.theme-dark, .theme-light) .nav-folder-title {
   color: var(--gray-mid);
 }
 
-.theme-dark .nav-file-title:hover,
-.theme-dark .nav-folder-title:hover {
+:is(.theme-dark, .theme-light) .nav-file-title:hover,
+:is(.theme-dark, .theme-light) .nav-folder-title:hover {
   color: var(--gray-light);
-  background-color: hsl(240, 4%, 10%);
+  background-color: var(--pn-nav-hover-bg);
 }
 
-.theme-dark .nav-file-title.is-active {
+:is(.theme-dark, .theme-light) .nav-file-title.is-active {
   color: var(--green);
-  background-color: hsl(160, 20%, 12%);
+  background-color: var(--pn-nav-active-bg);
 }
 
-/* Folder colors */
+/* Folder colors — Level 1 (root) */
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder:nth-child(1)  > .nav-folder-title .nav-folder-title-content { color: var(--green); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder:nth-child(2)  > .nav-folder-title .nav-folder-title-content { color: var(--blue); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder:nth-child(3)  > .nav-folder-title .nav-folder-title-content { color: var(--pink); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder:nth-child(4)  > .nav-folder-title .nav-folder-title-content { color: var(--yellow); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder:nth-child(5)  > .nav-folder-title .nav-folder-title-content { color: var(--orange); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder:nth-child(6)  > .nav-folder-title .nav-folder-title-content { color: var(--purple); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder:nth-child(7)  > .nav-folder-title .nav-folder-title-content { color: var(--red); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder:nth-child(8)  > .nav-folder-title .nav-folder-title-content { color: var(--teal); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder:nth-child(9)  > .nav-folder-title .nav-folder-title-content { color: var(--gray-light); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder:nth-child(10) > .nav-folder-title .nav-folder-title-content { color: var(--blue-light); }
 
-/* Level 1 — root folders */
-.theme-dark .nav-files-container > div > .nav-folder:nth-child(1) > .nav-folder-title .nav-folder-title-content { color: var(--green); }
-.theme-dark .nav-files-container > div > .nav-folder:nth-child(2) > .nav-folder-title .nav-folder-title-content { color: var(--blue); }
-.theme-dark .nav-files-container > div > .nav-folder:nth-child(3) > .nav-folder-title .nav-folder-title-content { color: var(--pink); }
-.theme-dark .nav-files-container > div > .nav-folder:nth-child(4) > .nav-folder-title .nav-folder-title-content { color: var(--yellow); }
-.theme-dark .nav-files-container > div > .nav-folder:nth-child(5) > .nav-folder-title .nav-folder-title-content { color: var(--orange); }
-.theme-dark .nav-files-container > div > .nav-folder:nth-child(6) > .nav-folder-title .nav-folder-title-content { color: var(--purple); }
-.theme-dark .nav-files-container > div > .nav-folder:nth-child(7) > .nav-folder-title .nav-folder-title-content { color: var(--red); }
-.theme-dark .nav-files-container > div > .nav-folder:nth-child(8) > .nav-folder-title .nav-folder-title-content { color: var(--teal); }
-.theme-dark .nav-files-container > div > .nav-folder:nth-child(9) > .nav-folder-title .nav-folder-title-content { color: var(--gray-light); }
-.theme-dark .nav-files-container > div > .nav-folder:nth-child(10) > .nav-folder-title .nav-folder-title-content { color: var(--blue-light); }
-
-/* Level 2 — subfolders, different color order */
-.theme-dark .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(1) > .nav-folder-title .nav-folder-title-content { color: var(--blue); }
-.theme-dark .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(2) > .nav-folder-title .nav-folder-title-content { color: var(--pink); }
-.theme-dark .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(3) > .nav-folder-title .nav-folder-title-content { color: var(--yellow); }
-.theme-dark .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(4) > .nav-folder-title .nav-folder-title-content { color: var(--orange); }
-.theme-dark .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(5) > .nav-folder-title .nav-folder-title-content { color: var(--purple); }
-.theme-dark .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(6) > .nav-folder-title .nav-folder-title-content { color: var(--red); }
-.theme-dark .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(7) > .nav-folder-title .nav-folder-title-content { color: var(--teal); }
-.theme-dark .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(8) > .nav-folder-title .nav-folder-title-content { color: var(--green); }
-.theme-dark .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(9) > .nav-folder-title .nav-folder-title-content { color: var(--gray-light); }
-.theme-dark .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(10) > .nav-folder-title .nav-folder-title-content { color: var(--blue-light); }
+/* Folder colors — Level 2 (subfolders, different order) */
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(1)  > .nav-folder-title .nav-folder-title-content { color: var(--blue); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(2)  > .nav-folder-title .nav-folder-title-content { color: var(--pink); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(3)  > .nav-folder-title .nav-folder-title-content { color: var(--yellow); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(4)  > .nav-folder-title .nav-folder-title-content { color: var(--orange); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(5)  > .nav-folder-title .nav-folder-title-content { color: var(--purple); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(6)  > .nav-folder-title .nav-folder-title-content { color: var(--red); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(7)  > .nav-folder-title .nav-folder-title-content { color: var(--teal); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(8)  > .nav-folder-title .nav-folder-title-content { color: var(--green); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(9)  > .nav-folder-title .nav-folder-title-content { color: var(--gray-light); }
+:is(.theme-dark, .theme-light) .nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder:nth-child(10) > .nav-folder-title .nav-folder-title-content { color: var(--blue-light); }
 
 /* Level 3+ — gray */
-.theme-dark .nav-folder-children .nav-folder-children .nav-folder-title-content {
+:is(.theme-dark, .theme-light) .nav-folder-children .nav-folder-children .nav-folder-title-content {
   color: var(--gray-mid) !important;
 }
 
 /* Headings */
-.theme-dark .cm-header-1,
-.theme-dark .markdown-rendered h1 {
+:is(.theme-dark, .theme-light) .cm-header-1,
+:is(.theme-dark, .theme-light) .markdown-rendered h1 {
   font-weight: 700;
 }
 
-.theme-dark .cm-header-2,
-.theme-dark .markdown-rendered h2 {
+:is(.theme-dark, .theme-light) .cm-header-2,
+:is(.theme-dark, .theme-light) .markdown-rendered h2 {
   font-weight: 600;
-  border-bottom: 1px solid hsl(240, 4%, 22%);
+  border-bottom: 1px solid var(--pn-heading-border);
   padding-bottom: 0.3em;
 }
 
 /* Inline code */
-.theme-dark code:not(pre code) {
-  background-color: hsl(240, 4%, 10%);
+:is(.theme-dark, .theme-light) code:not(pre code) {
+  background-color: var(--pn-code-bg);
   color: var(--orange);
   border-radius: 3px;
   padding: 0.15em 0.35em;
 }
 
 /* Blockquote */
-.theme-dark blockquote {
+:is(.theme-dark, .theme-light) blockquote {
   border-left: 3px solid var(--green);
-  background-color: hsl(160, 8%, 6%);
+  background-color: var(--pn-blockquote-bg);
   border-radius: 0 4px 4px 0;
 }
 
 /* Checkbox */
-.theme-dark input[type="checkbox"]:checked {
+:is(.theme-dark, .theme-light) input[type="checkbox"]:checked {
   background-color: var(--green);
   border-color: var(--green);
 }
 
 /* Table */
-.theme-dark th {
-  background-color: hsl(240, 6%, 14%);
+:is(.theme-dark, .theme-light) th {
+  background-color: var(--pn-th-bg);
   color: var(--green);
   font-weight: 600;
 }
 
-.theme-dark td {
-  border-color: hsl(240, 5%, 22%);
+:is(.theme-dark, .theme-light) td {
+  border-color: var(--pn-td-border);
 }
 
 /* Cursor & selection */
-.theme-dark .cm-s-obsidian .cm-cursor {
+:is(.theme-dark, .theme-light) .cm-s-obsidian .cm-cursor {
   border-color: var(--green);
 }
 
-.theme-dark ::selection {
-  background-color: hsl(170, 40%, 25%, 0.35);
+:is(.theme-dark, .theme-light) ::selection {
+  background-color: var(--pn-selection-bg);
 }
 
 /* Breadcrumb / path bar */
-.theme-dark .view-header-breadcrumb-separator {
+:is(.theme-dark, .theme-light) .view-header-breadcrumb-separator {
   color: var(--text-faint);
 }
 
-.theme-dark .view-header-title-parent .view-header-breadcrumb:nth-of-type(1) { color: var(--green); }
-.theme-dark .view-header-title-parent .view-header-breadcrumb:nth-of-type(3) { color: var(--blue); }
-.theme-dark .view-header-title-parent .view-header-breadcrumb:nth-of-type(n+5) { color: var(--gray-mid); }
+:is(.theme-dark, .theme-light) .view-header-title-parent .view-header-breadcrumb:nth-of-type(1)    { color: var(--green); }
+:is(.theme-dark, .theme-light) .view-header-title-parent .view-header-breadcrumb:nth-of-type(3)    { color: var(--blue); }
+:is(.theme-dark, .theme-light) .view-header-title-parent .view-header-breadcrumb:nth-of-type(n+5)  { color: var(--gray-mid); }
 
 /* Tabs */
-.theme-dark .workspace-tab-header,
-.theme-dark .workspace-tab-header-inner {
+:is(.theme-dark, .theme-light) .workspace-tab-header,
+:is(.theme-dark, .theme-light) .workspace-tab-header-inner {
   border-radius: 0 !important;
 }
 
-.theme-dark .workspace-tab-header::before,
-.theme-dark .workspace-tab-header::after,
-.theme-dark .workspace-tab-header-inner::before,
-.theme-dark .workspace-tab-header-inner::after {
+:is(.theme-dark, .theme-light) .workspace-tab-header::before,
+:is(.theme-dark, .theme-light) .workspace-tab-header::after,
+:is(.theme-dark, .theme-light) .workspace-tab-header-inner::before,
+:is(.theme-dark, .theme-light) .workspace-tab-header-inner::after {
   display: none !important;
 }
 
-.theme-dark .mod-root .workspace-tab-header-container {
+:is(.theme-dark, .theme-light) .mod-root .workspace-tab-header-container {
   padding-left: 0 !important;
   margin-left: 0 !important;
 }
 
-.theme-dark .mod-root .workspace-tab-header-container-inner {
+:is(.theme-dark, .theme-light) .mod-root .workspace-tab-header-container-inner {
   padding-left: 0 !important;
   margin-left: 0 !important;
   margin-top: 0 !important;
 }
 
-.theme-dark .mod-root .workspace-tab-header {
+:is(.theme-dark, .theme-light) .mod-root .workspace-tab-header {
   border: none !important;
   border-left: 1px solid var(--background-modifier-border) !important;
   box-shadow: none !important;
   padding-left: 12px !important;
 }
 
-.theme-dark .mod-root .workspace-tab-header:first-child {
+:is(.theme-dark, .theme-light) .mod-root .workspace-tab-header:first-child {
   border-left: none !important;
 }
 
-.theme-dark .mod-root .workspace-tab-header.is-active {
-  background-color: hsl(240, 5%, 4%) !important;
+:is(.theme-dark, .theme-light) .mod-root .workspace-tab-header.is-active {
+  background-color: var(--pn-tab-active-bg) !important;
   border-right: 1px solid var(--background-modifier-border) !important;
 }
 
 /* Sidebar tab buttons */
-.theme-dark .mod-left-split .workspace-tab-header-container-inner,
-.theme-dark .mod-right-split .workspace-tab-header-container-inner {
+:is(.theme-dark, .theme-light) .mod-left-split .workspace-tab-header-container-inner,
+:is(.theme-dark, .theme-light) .mod-right-split .workspace-tab-header-container-inner {
   justify-content: center;
   width: 100%;
   display: flex;
 }
 
 /* Divider */
-.theme-dark hr {
-  border-color: hsl(240, 5%, 24%);
+:is(.theme-dark, .theme-light) hr {
+  border-color: var(--pn-hr-color);
 }
